@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import LogoHorizontalIcon from '@/assets/icons/brand/logo-horizontal.svg'; // TODO
+import LogoHorizontalIcon from '@/assets/icons/brand/Artfolio_Logo-Text-removebg-preview.png';
 
 // * Component: Logo
 export default function LogoHorizontal() {

@@ -50,6 +50,9 @@ export const defaultMetadata: Metadata = {
   //   manifest: '/manifest.json',
   keywords: [
     // TODO: General Keywords
+    'art portfolio',
+    'web development',
+    'web design',
     // TODO: Long-tail keywords
   ],
   bookmarks: [baseUrl + '/'],

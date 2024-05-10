@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
-import LogoSquareIcon from '@/assets/icons/brand/logo-square.svg'; // TODO
+import LogoSquareIcon from '@/assets/icons/brand/Artfolio_Logo-Image-Square-HD.png';
 
 // * Component: Logo
 export default function LogoSquare({ className = '' }: { className?: string }) {
