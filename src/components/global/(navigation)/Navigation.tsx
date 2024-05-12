@@ -2,12 +2,6 @@
 
 import { Fragment, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-  RectangleGroupIcon,
-} from '@heroicons/react/20/solid';
 
 import {
   Brush,
@@ -19,6 +13,7 @@ import {
   BellPlus,
   Sparkle,
   GalleryVerticalEnd,
+  ChevronDown,
 } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
@@ -69,7 +64,7 @@ export default function Navigation() {
 
   // * Render
   return (
-    <header className="relative isolate z-10 bg-white">
+    <header className="absolute inset-x-0 top-0 z-50 isolate">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -90,14 +85,16 @@ export default function Navigation() {
 
         {/* Mobile Toggler */}
         <div className="flex lg:hidden">
-          <button
-            type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-slate-700"
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <Menu className="h-6 w-6" aria-hidden="true" />
-          </button>
+          {!mobileMenuOpen && (
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-slate-700"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <span className="sr-only">Open main menu</span>
+              <Menu className="h-6 w-6" aria-hidden="true" />
+            </button>
+          )}
         </div>
 
         {/* Desktop menu */}
@@ -105,7 +102,7 @@ export default function Navigation() {
           <Popover>
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-slate-900">
               Projects
-              <ChevronDownIcon
+              <ChevronDown
                 className="h-5 w-5 flex-none text-slate-400"
                 aria-hidden="true"
               />
@@ -235,7 +232,7 @@ export default function Navigation() {
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50">
                         Projects
-                        <ChevronDownIcon
+                        <ChevronDown
                           className={cn(
                             open ? 'rotate-180' : '',
                             'h-5 w-5 flex-none',
