@@ -4,10 +4,6 @@ import { Fragment, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 
 import {
-  Brush,
-  Pen,
-  Palette,
-  SwatchBook,
   X,
   Menu,
   BellPlus,
@@ -20,34 +16,8 @@ import { cn } from '@/lib/utils';
 import LogoHorizontalIcon from '@/assets/icons/brand/Artfolio_Logo-Text-removebg-preview.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import { featuredPortfolioItems } from '@/assets/data/PortfolioItems';
 
-const featuredPortfolioItems = [
-  {
-    name: 'Eclipsed Horizons',
-    description: 'A surreal landscape where the sky meets shadowed horizons.',
-    href: '/portfolio/eclipsed-horizons',
-    icon: Brush,
-  },
-  {
-    name: 'Whispers of the Eternal',
-    description: 'Delicate strokes capturing the essence of timeless whispers.',
-    href: '/portfolio/whispers-of-the-eternal',
-    icon: Palette,
-  },
-  {
-    name: 'Symphony of Solitude',
-    description:
-      "An evocative portrayal of serene solitude amidst nature's symphony.",
-    href: '/portfolio/symphony-of-solitude',
-    icon: SwatchBook,
-  },
-  {
-    name: 'Luminescent Reverie',
-    description: 'A dreamlike scene illuminated by ethereal, glowing light.',
-    href: '/portfolio/luminescent-reverie',
-    icon: Pen,
-  },
-];
 const callsToAction = [
   { name: 'New Releases', href: '/portfolio?filter=new', icon: BellPlus },
   {
@@ -101,7 +71,7 @@ export default function Navigation() {
         <Popover.Group className="hidden lg:flex lg:items-center lg:gap-x-12">
           <Popover>
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-slate-900">
-              Projects
+              Portfolio
               <ChevronDown
                 className="h-5 w-5 flex-none text-slate-400"
                 aria-hidden="true"
@@ -119,7 +89,7 @@ export default function Navigation() {
             >
               <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-slate-900/5">
                 <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
-                  {featuredPortfolioItems.map((item) => (
+                  {featuredPortfolioItems?.map((item) => (
                     <div
                       key={item.name}
                       className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-slate-50"
@@ -172,23 +142,23 @@ export default function Navigation() {
             About
           </Link>
           <Link
-            href="/articles"
-            className="text-sm font-semibold leading-6 text-slate-900"
-          >
-            Articles
-          </Link>
-          <Link
             href="/portfolio?filter=all"
             className="text-sm font-semibold leading-6 text-slate-900"
           >
             Portfolio
+          </Link>
+          <Link
+            href="/contact"
+            className="text-sm font-semibold leading-6 text-slate-900"
+          >
+            Contact
           </Link>
         </Popover.Group>
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
-            href="#Calendar"
+            href="#Calendar" // TODO: Link to Calendly Page
             className="text-sm font-semibold leading-6 text-slate-900"
           >
             Book a Meeting <span aria-hidden="true">&rarr;</span>
@@ -231,7 +201,7 @@ export default function Navigation() {
                   {({ open }: { open: boolean }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50">
-                        Projects
+                        Portfolio
                         <ChevronDown
                           className={cn(
                             open ? 'rotate-180' : '',
@@ -264,21 +234,21 @@ export default function Navigation() {
                   About
                 </Link>
                 <Link
-                  href="/articles"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50"
-                >
-                  Artciles
-                </Link>
-                <Link
-                  href="/portfolio?filter=all"
+                  href="#Portfolio"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50"
                 >
                   Portfolio
                 </Link>
+                <Link
+                  href="#Contact"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50"
+                >
+                  Contact
+                </Link>
               </div>
               <div className="py-6">
                 <Link
-                  href="#Calendar"
+                  href="#Calendar" // TODO: Link to Calendly Page
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50"
                 >
                   Book a Meeting

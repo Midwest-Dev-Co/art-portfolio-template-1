@@ -2,7 +2,7 @@ import Main from '@/components/global/Main';
 import ConstructionImage from '@/assets/images/construction.jpg';
 import Image from 'next/image';
 
-export default function PortfolioPage() {
+export default function SinglePortfolioPage() {
   return (
     <Main>
       {/* Under Construction with Construction Image */}
