@@ -2,7 +2,10 @@ const navigation = {
   main: [
     { name: 'About', href: '/#About' },
     { name: 'Portfolio', href: '/#Portfolio' },
-    { name: 'Resume', href: '/#CTA' },
+    {
+      name: 'Resume',
+      href: 'https://cdn-careerservices.fas.harvard.edu/wp-content/uploads/sites/161/2023/08/College-resume-and-cover-letter-4.pdf',
+    },
     { name: 'Contact', href: '/#Contact' },
   ],
   social: [
@@ -86,6 +89,8 @@ export default function Footer() {
             <div key={item.name} className="pb-6">
               <a
                 href={item.href}
+                target={item.name === 'Resume' ? '_blank' : '_self'}
+                rel="noopener noreferrer"
                 className="text-sm leading-6 text-slate-600 hover:text-slate-900"
               >
                 {item.name}
@@ -93,11 +98,14 @@ export default function Footer() {
             </div>
           ))}
         </nav>
+
         <div className="mt-10 flex justify-center space-x-10">
           {navigation.social.map((item) => (
             <a
               key={item.name}
               href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-slate-400 hover:text-slate-500"
             >
               <span className="sr-only">{item.name}</span>
