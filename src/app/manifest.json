@@ -1,7 +1,7 @@
 {
-  "name": "TSKCOMPANY",
-  "short_name": "TSKCOMPANY",
-  "description": "TSKDESCRIPTION",
+  "name": "Artfolio",
+  "short_name": "Artfolio",
+  "description": "Local Graphic Design in the Midwest.",
   "start_url": "/",
   "icons": [
     {

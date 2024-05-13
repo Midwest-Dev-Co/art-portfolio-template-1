@@ -20,7 +20,7 @@ export default function SimpleFooter() {
           month: 'long',
           day: 'numeric',
         })}{' '}
-        - TSKCOMPANY. All rights reserved.
+        - Artfolio. All rights reserved.
       </p>
 
       {/* Address */}

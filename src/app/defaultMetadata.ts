@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 
-const title = 'TSKSLOGAN | ' + process.env.NEXT_PUBLIC_COMPANY_NAME;
-const description = 'TSKDESCRIPTION';
+const title = 'Local Graphic Design | ' + process.env.NEXT_PUBLIC_COMPANY_NAME;
+const description = 'Local Graphic Design in the Midwest.';
 const baseUrl = 'https://TSKDOMAIN.com';
 
 const images = [
   {
     url: '/maskable_icon.png',
-    alt: 'TSKCOMPANY Logo',
+    alt: 'Artfolio Logo',
     width: 512,
     height: 512,
   },
@@ -58,7 +58,7 @@ export const defaultMetadata: Metadata = {
   bookmarks: [baseUrl + '/'],
   openGraph: {
     type: 'website',
-    siteName: 'TSKCOMPANY',
+    siteName: 'Artfolio',
     title,
     description,
     url: baseUrl,
